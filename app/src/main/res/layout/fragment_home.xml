@@ -16,6 +16,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="SONGS"/>
+
         <Button
             android:id="@+id/btn_slideshow"
             android:layout_width="250dp"
@@ -23,7 +24,8 @@
             android:layout_below="@+id/btn_gallery"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:text="TEST"/>
+            android:text="SLIDESHOW" />
+
     </RelativeLayout>
 
     <TextView
