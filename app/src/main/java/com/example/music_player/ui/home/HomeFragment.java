@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 
 import com.example.music_player.R;
 import com.example.music_player.databinding.FragmentHomeBinding;
@@ -29,19 +32,15 @@ public class HomeFragment extends Fragment {
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
         final Button btngallery = (Button) root.findViewById(R.id.btn_gallery);
-        btngallery.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
+        btngallery.setOnClickListener(view -> {
+            NavController navController = Navigation.findNavController(view);
+            navController.navigate(R.id.action_nav_home_to_nav_gallery);
         });
 
         final Button btnslideshow = (Button) root.findViewById(R.id.btn_slideshow);
-        btnslideshow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
+        btnslideshow.setOnClickListener(view -> {
+            NavController navController = Navigation.findNavController(view);
+            navController.navigate(R.id.action_nav_home_to_nav_slideshow);
         });
         return root;
     }
